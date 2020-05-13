@@ -16,7 +16,7 @@ export class PrivateAccountService {
 
   signInAccount(user: LoginPrivate) {
     const httpOptions = { headers: new HttpHeaders({'No-Auth': 'True' }) };
-    return this.http.get(baseUrl + '/api/Profile/GetPublicKeyUser?privateKey=' + user.privateKey, httpOptions);
+    return this.http.get(baseUrl + '/api/wallet/Profile/GetPublicKeyUser?privateKey=' + user.privateKey, httpOptions);
   }
   signoutAccount() {
     const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };

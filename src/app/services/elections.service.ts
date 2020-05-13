@@ -10,13 +10,13 @@ import { baseUrl } from '../models/config';
 export class ElectionsService {
   constructor(private http: HttpClient) { }
   getAllElectionList() {
-    return this.http.get(baseUrl + '/api/auth/Election/GetElectionList');
+    return this.http.get(baseUrl + '/api/wallet/Election/GetElectionList');
   }
   getElectionDetails(id: number) {
-    return this.http.get(baseUrl + '/api/auth/Election/GetElectionDetails?electionId=' + id);
+    return this.http.get(baseUrl + '/api/wallet/Election/GetElectionDetails?electionId=' + id);
   }
   userVote(vote: Vote) {
-    return this.http.post<Vote>(baseUrl + '/api/auth/Election/UserVote', vote);
+    return this.http.post<Vote>(baseUrl + '/api/wallet/Election/UserVote', vote);
   }
 }
 

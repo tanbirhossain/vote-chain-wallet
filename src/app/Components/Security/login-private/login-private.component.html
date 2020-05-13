@@ -1,29 +1,31 @@
-<p>
-  login-private works!
-</p>
-<div class="card">
-  <div class="card-body">
-    <form [formGroup]="angForm" novalidate>
-      <div class="form-group">
-        <label class="col-md-4">Private Key</label>
-        <input type="text" class="form-control" formControlName="privateKey" #privateKey />
-      </div>
-      <div *ngIf="angForm.controls['privateKey'].invalid && (angForm.controls['privateKey'].dirty || angForm.controls['privateKey'].touched)"
-        class="alert alert-danger">
-        <div *ngIf="angForm.controls['privateKey'].errors.required">
-            Private Key is required.
+<!-- Begin page content -->
+
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-body">
+      <form [formGroup]="angForm" novalidate>
+        <div class="form-group">
+          <label>Private Key</label>
+          <input type="text" class="form-control" formControlName="privateKey" #privateKey />
         </div>
-      </div>
-
-
-
-<div *ngIf="message !=null" class="alert alert-danger">
-  {{message}}
-</div>
-
+        <div
+          *ngIf="angForm.controls['privateKey'].invalid && (angForm.controls['privateKey'].dirty || angForm.controls['privateKey'].touched)"
+          class="alert alert-danger">
+          <div *ngIf="angForm.controls['privateKey'].errors.required">
+            Private Key is required.
+          </div>
+        </div>
+        <div *ngIf="message !=null" class="alert alert-danger">
+          {{message}}
+        </div>
+        
+      </form>
+    </div>
+    <div class="card-footer">
       <div class="form-group">
-        <button type="submit" (click)="onFormSubmit()" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary btn-block"> Log In</button>
+        <button type="submit" (click)="onFormSubmit()" [disabled]="angForm.pristine || angForm.invalid"
+          class="btn btn-primary"> Log In</button>
       </div>
-    </form>
+    </div>
   </div>
 </div>

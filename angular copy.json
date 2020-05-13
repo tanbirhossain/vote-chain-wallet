@@ -9,10 +9,17 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "fr": "src/locale/messages.fr.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/angularCrud",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -116,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angularCrud"
+    }
+  },
+  "defaultProject": "angularCrud",
+  "cli": {
+    "analytics": "14f931cf-d736-4f2f-b9c4-cc0c8a15a3e5"
+  }
 }
