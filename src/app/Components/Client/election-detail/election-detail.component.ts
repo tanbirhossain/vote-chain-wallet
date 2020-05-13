@@ -63,7 +63,7 @@ export class ElectionDetailComponent implements OnInit {
           },
           (err: HttpErrorResponse) => {
             console.log(err);
-            // this.message = err.error.Message;
+            // // this.message = err.error.Message;
           });
       }
     });
