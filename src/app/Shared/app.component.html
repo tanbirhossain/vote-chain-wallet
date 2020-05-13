@@ -1,0 +1,30 @@
+<ng2-slim-loading-bar color="blue"></ng2-slim-loading-bar>
+
+<div *ngIf="isShow">
+  <nav class="navbar navbar-expand-sm bg-light">
+    <div class="container-fluid">
+      <ul class="navbar-nav">
+        <li class="nav-item" routerLinkActive="active">
+          <a routerLink="elections" class="nav-link">
+            elections
+          </a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a routerLink="login" class="nav-link" (click)="logout()">
+            LogOut
+          </a>
+        </li>
+
+        <li class="nav-item" routerLinkActive="active">
+          {{username}}
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+</div>
+
+<div class="container">
+  <br>
+  <router-outlet></router-outlet>
+</div>
