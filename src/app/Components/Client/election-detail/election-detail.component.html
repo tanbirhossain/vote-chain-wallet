@@ -1,46 +1,57 @@
-<p>election-detail works!</p>
-<div class="row">
-  <div class="col-12">
-    <div class="card">
-      <div class="card-header">
-        Election Information
-        <button class="btn btn-light btn-sm float-right my-1" (click)="goBack()"> &lt; Back</button>
 
-      </div>
-      <div class="card-body">
-        <table
-          class="table table-sm table-hover table-responsive-sm table-responsive-md table-responsive-lg table-bordered">
-          <tbody>
-            <tr>
 
-              <td style="font-weight:bold">Election Name</td>
-              <td id="electionName">{{election.name}}</td>
 
-            </tr>
-            <tr>
+<div class="content content-fixed bd-b">
+  <div class="container pd-x-0 pd-lg-x-10 pd-xl-x-0">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            Election Information
+            <button class="btn btn-light btn-sm float-right my-1" (click)="goBack()"> &lt; Back</button>
 
-              <td style="font-weight:bold">Status</td>
-              <td id="electionStatus"><span class="badge badge-info">{{election.status}}</span></td>
+          </div>
+          <div class="card-body">
+            <table
+              class="table table-sm table-hover table-responsive-sm table-responsive-md table-responsive-lg table-bordered">
+              <tbody>
+                <tr>
 
-            </tr>
-            <tr>
-              <td style="font-weight:bold">Address</td>
-              <td id="electionAddress">{{election.address}}</td>
+                  <td style="font-weight:bold">Election Name</td>
+                  <td id="electionName">{{election.name}}</td>
 
-            </tr>
-            <tr>
-              <td style="font-weight:bold">Total Candidates</td>
-              <td id="electionTotalCandidates"><span
-                  class="badge badge-pill badge-primary">{{election.candidates.length}}</span></td>
-            </tr>
-          </tbody>
-        </table>
+                </tr>
+                <tr>
 
+                  <td style="font-weight:bold">Status</td>
+                  <td id="electionStatus"><span class="badge badge-info">{{election.status}}</span></td>
+
+                </tr>
+                <tr>
+                  <td style="font-weight:bold">Address</td>
+                  <td id="electionAddress">{{election.address}}</td>
+
+                </tr>
+                <tr>
+                  <td style="font-weight:bold">Total Candidates</td>
+                  <td id="electionTotalCandidates"><span
+                      class="badge badge-pill badge-primary">{{election.candidates.length}}</span></td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-<br>
+  </div><!-- container -->
+</div><!-- content -->
+
+
+
+
+
+<!--
 <div class="row">
   <div class="col-12">
     <div class="card">
@@ -76,4 +87,46 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
+
+
+
+<div class="content content-fixed bd-b">
+  <div class="container pd-x-0 pd-lg-x-10 pd-xl-x-0">
+    <div class="search-form mg-t-20 mg-sm-t-0">
+      <input type="search" class="form-control" placeholder="Search candiadte">
+      <button class="btn" type="button"><i data-feather="search"></i></button>
+    </div>
+  </div><!-- container -->
+</div><!-- content -->
+
+
+<div class="content">
+  <div class="container pd-x-0 pd-lg-x-10 pd-xl-x-0">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="row row-xs mg-b-25">
+
+          <div class="col-sm-6 col-md-4 mg-t-10" *ngFor="let value of candidateList">
+            <div class="card card-profile">
+              <img src="/assets/theme/assets/img/img3.jpg" class="card-img-top" alt="">
+              <div class="card-body tx-13">
+                <div>
+                  <a>
+                    <div class="avatar avatar-lg"><span class="avatar-initial rounded-circle bg-dark"></span></div>
+                  </a>
+                  <h5><a href="#">{{ value.candidateName }}</a></h5>
+
+                  <div class="mg-b-25" style="word-break: break-all;"><span class="tx-12 tx-color-03">{{ value.candidateAddress }}</span></div>
+
+                  <button class="btn btn-block btn-primary" (click)="userVote(election.address,value.candidateAddress,value.candidateName)">Vote</button>
+                </div>
+              </div>
+            </div><!-- card -->
+          </div><!-- col -->
+        </div><!-- row -->
+      </div><!-- col -->
+
+    </div><!-- row -->
+  </div><!-- container -->
+</div><!-- content -->

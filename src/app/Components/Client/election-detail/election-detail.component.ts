@@ -16,12 +16,13 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class ElectionDetailComponent implements OnInit {
   election: any;
   candidateList: any;
-  routeValue: number;
+  routeValue: string;
 
   constructor(private location: Location, private fb: FormBuilder,
-              private route: ActivatedRoute, private router: Router, private electionsService: ElectionsService) {
+    private route: ActivatedRoute, private router: Router, private electionsService: ElectionsService) {
   }
   ngOnInit() {
+
     this.routeValue = this.route.snapshot.params.id;
     console.log("param : ", this.route.snapshot.params.id);
     if (this.routeValue != null) {
@@ -29,7 +30,7 @@ export class ElectionDetailComponent implements OnInit {
       this.getEmployee(this.routeValue);
     }
   }
-  getEmployee(id: number) {
+  getEmployee(id: string) {
     console.log("get ID: ", id);
     this.electionsService.getElectionDetails(id).subscribe(
       (result: any) => {
@@ -40,33 +41,41 @@ export class ElectionDetailComponent implements OnInit {
     );
   }
 
-  userVote(electionAddress: string, candidateAddress: string) {
+  userVote(electionAddress: string, candidateAddress: string, candidateName: string) {
 
     let uservote = new Vote(electionAddress, candidateAddress);
     console.log("VOTE : ", uservote);
 
     Swal.fire({
-      title: 'Are you sure?',
-      text: "You won't be able to Vote this!",
+      title: 'Are you sure for ' + candidateName + ' ?',
+      text: "You can't be able to vote the secound time for this election!",
       type: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
+      showLoaderOnConfirm: true,
       confirmButtonText: 'Yes, Vote it!'
     }).then((result) => {
       if (result.value) {
+        Swal.fire('Please wait');
+        Swal.showLoading();
         this.electionsService.userVote(uservote).subscribe(
           (userResult: any) => {
             console.log("VoteResult: ", userResult);
-
+            Swal.fire(
+              'Voted!',
+              'Your Voted Successfully.',
+              'success'
+            );
             this.router.navigate(['/elections']);
           },
           (err: HttpErrorResponse) => {
             console.log(err);
-            // // this.message = err.error.Message;
+            Swal.fire('Oops...', err.error.Message, 'error');
           });
       }
     });
+
   }
 
   goBack() {

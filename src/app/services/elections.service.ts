@@ -12,8 +12,8 @@ export class ElectionsService {
   getAllElectionList() {
     return this.http.get(baseUrl + '/api/wallet/Election/GetElectionList');
   }
-  getElectionDetails(id: number) {
-    return this.http.get(baseUrl + '/api/wallet/Election/GetElectionDetails?electionId=' + id);
+  getElectionDetails(electionAddress: string) {
+    return this.http.get(baseUrl + '/api/wallet/Election/GetElectionDetailsByAddress?electionAddress=' + electionAddress);
   }
   userVote(vote: Vote) {
     return this.http.post<Vote>(baseUrl + '/api/wallet/Election/UserVote', vote);

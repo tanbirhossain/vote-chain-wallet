@@ -1,5 +1,4 @@
-
-<table class="table">
+<!-- <table class="table">
   <thead>
     <tr>
       <th></th>
@@ -20,4 +19,39 @@
       <td>{{ value.address }}</td>
     </tr>
   </tbody>
-</table>
+</table> -->
+
+
+
+
+
+<div class="content content-fixed bd-b">
+  <div class="container pd-x-0 pd-lg-x-10 pd-xl-x-0">
+    <div class="search-form mg-t-0 mg-sm-t-0">
+      <input type="search" class="form-control" placeholder="Search election">
+      <button class="btn" type="button"><i data-feather="search"></i></button>
+    </div>
+  </div><!-- container -->
+</div><!-- content -->
+
+<div class="content">
+  <div class="container pd-x-0 pd-lg-x-10 pd-xl-x-0">
+    <div class="row">
+      <div *ngFor="let value of electionList;" class="col-sm-6 col-lg-3 mg-t-20 mg-sm-t-0">
+        <div class="card card-help">
+          <div class="card-body tx-13">
+            <div class="tx-60 lh-0 mg-b-25"><i class="icon ion-ios-cog"></i></div>
+            <h5><a [routerLink]="['/elections/detail', value.address]" class="link-01">{{ value.name }}</a></h5>
+            <p class="tx-color-03 mg-b-0" style="word-break: break-all;">{{ value.address }}</p>
+          </div><!-- card-body -->
+          <div class="card-footer tx-13">
+            <span>{{ value.candidates.length }} Particapates </span>
+            <a [routerLink]="['/elections/detail', value.address]" class="tx-18 lh-0"><i class="icon ion-md-arrow-forward"></i></a>
+          </div><!-- card-footer -->
+        </div><!-- card -->
+      </div><!-- col -->
+
+    </div><!-- row -->
+  </div>
+</div><!-- content -->
+

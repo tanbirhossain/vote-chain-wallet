@@ -33,7 +33,13 @@
               "src/styles.css"
             ],
             "scripts": [
-              "src/boo"
+              "src/assets/theme/lib/jquery/jquery.min.js",
+              "src/assets/theme/lib/bootstrap/js/bootstrap.bundle.min.js",
+              "src/assets/theme/lib/feather-icons/feather.min.js",
+              "src/assets/theme/lib/perfect-scrollbar/perfect-scrollbar.min.js",
+              "src/assets/theme/assets/js/dashforge.js",
+              "src/assets/theme/lib/js-cookie/js.cookie.js",
+              "src/assets/theme/assets/js/dashforge.settings.js"
             ]
           },
           "configurations": {
