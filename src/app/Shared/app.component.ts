@@ -14,7 +14,7 @@ import { stringify } from 'querystring';
 export class AppComponent {
   title = "angularCrud-u";
   username = "";
-  isShow = false;
+  show = true;
   /**
    *
    */
@@ -25,9 +25,9 @@ export class AppComponent {
       this.username = localStorage.getItem("userName");
       if (this.username != null )
       {
-        this.isShow = true;
+        this.show = true;
       }else  {
-        this.isShow = false;
+        this.show = false;
       }
       // this.navigationInterceptor(event);
     });

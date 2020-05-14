@@ -23,11 +23,13 @@
   </nav>
 
 </div> -->
-<div *ngIf="isShow">
-<header class="navbar navbar-header navbar-header-fixed">
+<!-- <div *ngIf="isShow"> -->
+
+<header [hidden]="!show" class="navbar navbar-header navbar-header-fixed">
   <a href="#" id="mainMenuOpen" class="burger-menu"><i data-feather="menu"></i></a>
   <div class="navbar-brand">
-    <a href="/assets/theme/index-2.html" class="df-logo">Vote<span>chain</span></a>
+
+    <a routerLink="/" class="df-logo">Vote<span>chain</span></a>
   </div><!-- navbar-brand -->
   <div id="navbarMenu" class="navbar-menu-wrapper">
     <div class="navbar-menu-header">
@@ -157,7 +159,8 @@
     </div><!-- dropdown -->
   </div><!-- navbar-right -->
 </header><!-- navbar -->
-</div>
+
+<!-- </div> -->
   <router-outlet></router-outlet>
 
 

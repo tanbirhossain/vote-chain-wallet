@@ -19,17 +19,17 @@ export class CandidatesComponent implements OnInit {
     console.log("param : ", this.route.snapshot.params.id);
     if (this.routeValue != null) {
 
-      this.getEmployee(this.routeValue);
+      // this.getEmployee(this.routeValue);
     }
   }
-  getEmployee(id: number) {
-    console.log("get ID: ", id);
-    this.electionsService.getElectionDetails(id).subscribe(
-      (result: any) => {
-        console.log(result);
-        this.election = result;
-      }
-    );
-  }
+  // getEmployee(id: number) {
+  //   console.log("get ID: ", id);
+  //   this.electionsService.getElectionDetails(id).subscribe(
+  //     (result: any) => {
+  //       console.log(result);
+  //       this.election = result;
+  //     }
+  //   );
+  // }
 
 }

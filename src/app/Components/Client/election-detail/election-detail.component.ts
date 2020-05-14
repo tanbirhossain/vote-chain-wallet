@@ -64,7 +64,7 @@ export class ElectionDetailComponent implements OnInit {
             console.log("VoteResult: ", userResult);
             Swal.fire(
               'Voted!',
-              'Your Voted Successfully.',
+              'You Voted Successfully.',
               'success'
             );
             this.router.navigate(['/elections']);
