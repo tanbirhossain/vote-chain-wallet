@@ -44,7 +44,7 @@
             <h5><a [routerLink]="['/elections/detail', value.address]" class="link-01">{{ value.name }}</a></h5>
             <p class="tx-color-03 mg-b-0" style="word-break: break-all;">{{ value.address }}</p>
           </div><!-- card-body -->
-          <div class="card-footer tx-13">
+          <div class="card-footer tx-13" [routerLink]="['/elections/detail', value.address]">
             <span>{{ value.candidates.length }} Particapates </span>
             <a [routerLink]="['/elections/detail', value.address]" class="tx-18 lh-0"><i class="icon ion-md-arrow-forward"></i></a>
           </div><!-- card-footer -->

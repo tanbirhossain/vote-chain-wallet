@@ -68,7 +68,11 @@
           <button type="submit" class="btn btn-brand-02 btn-block" (click)="onFormSubmit()"
             [disabled]="angForm.pristine || angForm.invalid">Sign In</button>
           <div class="divider-text">or</div>
-          <button class="btn btn-outline-facebook btn-block">Sign In With QRCode Upload</button>
+          <label class="btn btn-outline-facebook btn-block">
+            <span>Sign In With QRCode Upload</span>
+            <input type='file' (change)="onSelectFile($event)">
+          </label>
+          <!-- <button class="btn btn-outline-facebook btn-block" (click)="onQRCodeUpload()">Sign In With QRCode Upload</button> -->
           <button class="btn btn-outline-twitter btn-block">Sign In With QR Scan</button>
           <!-- <div class="tx-13 mg-t-20 tx-center">Don't have an account? <a href="page-signup.html">Create an Account</a></div> -->
         </div>
@@ -76,3 +80,9 @@
     </div><!-- media -->
   </div><!-- container -->
 </div><!-- content -->
+
+
+
+QR   <div class="alert alert-success">
+  {{qrcodestring}}
+</div>
