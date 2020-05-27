@@ -1,3 +1,4 @@
+import { ScannerComponent } from './Components/Security/scanner/scanner.component';
 import { ElectionDetailComponent } from './Components/Client/election-detail/election-detail.component';
 import { CandidatesComponent } from './Components/Client/candidates/candidates.component';
 import { ElectionsComponent } from './Components/Client/elections/elections.component';
@@ -12,6 +13,7 @@ import { PageNotFoundComponent } from './Components/page-not-found/page-not-foun
 import { LoginPrivateComponent } from './Components/Security/login-private/login-private.component';
 
 const routes: Routes = [
+  { path: "scanner", component: ScannerComponent },
   { path: "login", component: LoginComponent },
   { path: "login/private", component: LoginPrivateComponent },
   { path: "elections", component: ElectionsComponent, canActivate: [AuthGuard] },

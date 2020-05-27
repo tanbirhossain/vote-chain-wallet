@@ -21,6 +21,10 @@ import { ElectionsComponent } from './Components/Client/elections/elections.comp
 import { CandidatesComponent } from './Components/Client/candidates/candidates.component';
 import { ElectionDetailComponent } from './Components/Client/election-detail/election-detail.component';
 
+// the scanner!
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { ScannerComponent } from './Components/Security/scanner/scanner.component';
+
 
 @NgModule({
   declarations: [
@@ -33,9 +37,11 @@ import { ElectionDetailComponent } from './Components/Client/election-detail/ele
     LoginPrivateComponent,
     ElectionsComponent,
     CandidatesComponent,
-    ElectionDetailComponent
+    ElectionDetailComponent,
+    ScannerComponent
   ],
   imports: [
+    ZXingScannerModule,
     HttpClientModule,
     ReactiveFormsModule,
     SlimLoadingBarModule,

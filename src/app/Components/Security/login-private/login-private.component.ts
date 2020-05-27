@@ -1,3 +1,5 @@
+import { DeviceVM } from './../../../models/device-vm';
+import { element } from 'protractor';
 import { LoginPrivate } from './../../../models/login-private';
 import { PrivateAccountService } from './../../../services/private-account.service';
 import { User } from './../../../models/user';
@@ -8,6 +10,8 @@ import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import { BrowserQRCodeReader } from '@zxing/library';
+
+
 declare var require: any;
 @Component({
   selector: 'app-login-private',
@@ -16,6 +20,11 @@ declare var require: any;
 })
 
 export class LoginPrivateComponent implements OnInit {
+
+  constructor(private fb: FormBuilder,
+                private route: ActivatedRoute,
+                private router: Router,
+                private accountService: PrivateAccountService) { }
   angForm: any;
   message: string;
   qrcodestring: any;
@@ -23,10 +32,7 @@ export class LoginPrivateComponent implements OnInit {
   url: any;
   imgSrc: string;
 
-  constructor(private fb: FormBuilder,
-    private route: ActivatedRoute,
-    private router: Router,
-    private accountService: PrivateAccountService) { }
+  //  deviceList: string[];
 
   ngOnInit() {
     this.createFrom();
@@ -102,5 +108,14 @@ export class LoginPrivateComponent implements OnInit {
         this.message = err.error.Message;
       });
   }
+
+  deviceList: DeviceVM[];
+
+  Scan() {
+    this.router.navigate(['/scanner']);
+  }
+
+
+
 
 }

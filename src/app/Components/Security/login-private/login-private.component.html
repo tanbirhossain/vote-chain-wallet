@@ -73,7 +73,7 @@
             <input type='file' (change)="onSelectFile($event)">
           </label>
           <!-- <button class="btn btn-outline-facebook btn-block" (click)="onQRCodeUpload()">Sign In With QRCode Upload</button> -->
-          <button class="btn btn-outline-twitter btn-block">Sign In With QR Scan</button>
+          <button class="btn btn-outline-twitter btn-block" (click)="Scan()">Sign In With QR Scan</button>
           <!-- <div class="tx-13 mg-t-20 tx-center">Don't have an account? <a href="page-signup.html">Create an Account</a></div> -->
         </div>
       </div><!-- sign-wrapper -->
@@ -83,6 +83,26 @@
 
 
 
-QR   <div class="alert alert-success">
+QR  <div class="alert alert-success">
   {{qrcodestring}}
 </div>
+
+
+<div>
+  <a class="button" id="startButton">Start</a>
+  <a class="button" id="resetButton">Reset</a>
+</div>
+
+<div>
+  <video id="video" width="300" height="200" style="border: 1px solid gray"></video>
+</div>
+
+<div id="sourceSelectPanel" style="display:none">
+  <label for="sourceSelect">Change video source:</label>
+  <select id="sourceSelect" style="max-width:400px">
+  </select>
+</div>
+
+<label>Result:</label>
+<pre><code id="result"></code></pre>
+
