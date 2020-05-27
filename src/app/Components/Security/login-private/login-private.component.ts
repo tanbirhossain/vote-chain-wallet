@@ -59,7 +59,7 @@ export class LoginPrivateComponent implements OnInit {
       let result: any = codeReader.decodeFromImage(img);
       console.log("Retun function", result);
       console.log("Retun String", result.__zone_symbol__value.text);
-      this.qrcodestring = result.__zone_symbol__value.text;
+      // this.qrcodestring = result.__zone_symbol__value.text;
     } catch (err) {
       console.log("QR string Error: ", err);
     }
