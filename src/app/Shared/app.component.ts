@@ -14,7 +14,7 @@ import { stringify } from 'querystring';
 })
 export class AppComponent {
   previousUrl: string;
-  title = "angularCrud-u";
+  title = "votechainxui-u";
   username = "";
   fullMenu = true;
   historyMenu = true;
