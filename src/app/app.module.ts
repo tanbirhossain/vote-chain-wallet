@@ -2,7 +2,7 @@ import { PrivateAccountService } from './services/private-account.service';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { SlimLoadingBarModule } from "ng2-slim-loading-bar";
+// import { SlimLoadingBarModule } from "ng2-slim-loading-bar";
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { EmployeeService } from "./services/employee.service";
@@ -44,7 +44,7 @@ import { ScannerComponent } from './Components/Security/scanner/scanner.componen
     ZXingScannerModule,
     HttpClientModule,
     ReactiveFormsModule,
-    SlimLoadingBarModule,
+    // SlimLoadingBarModule,
     BrowserModule,
     AppRoutingModule
   ],

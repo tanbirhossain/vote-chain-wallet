@@ -1,6 +1,6 @@
 import { AccountService } from './../services/account.service';
 import { Component, OnInit } from '@angular/core';
-import { SlimLoadingBarService } from "ng2-slim-loading-bar";
+// import { SlimLoadingBarService } from "ng2-slim-loading-bar";
 import { Location } from '@angular/common';
 import { from } from 'rxjs';
 import { NavigationCancel, Event, NavigationEnd, NavigationError, NavigationStart, Route, Router } from "@angular/router";
@@ -24,7 +24,7 @@ export class AppComponent {
    */
   // tslint:disable-next-line:variable-name
   constructor(private location: Location,
-              private _loadingBar: SlimLoadingBarService,
+              // private _loadingBar: SlimLoadingBarService,
               private _router: Router) {
     this._router.events.subscribe((event: Event) => {
        this.navigationInterceptor(event);
@@ -65,18 +65,18 @@ export class AppComponent {
         this.historyMenu = false;
         this.profileMenu = true;
       }
-      this._loadingBar.start();
+      // this._loadingBar.start();
     }
 
     if (event instanceof NavigationEnd) {
       this.previousUrl = event.url;
-      this._loadingBar.complete();
+      // this._loadingBar.complete();
     }
     if (event instanceof NavigationCancel) {
-      this._loadingBar.stop();
+      // this._loadingBar.stop();
     }
     if (event instanceof NavigationError) {
-      this._loadingBar.stop();
+      // this._loadingBar.stop();
     }
   }
 
