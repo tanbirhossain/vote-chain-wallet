@@ -14,7 +14,7 @@ import { AppComponent } from './Shared/app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './Components/Security/login/login.component';
 import { RegistrationComponent } from './Components/Security/registration/registration.component';
-// import { AuthGuard } from './auth/auth.guard';
+import { AuthGuard } from './auth/auth.guard';
 
 import { LoginPrivateComponent } from './Components/Security/login-private/login-private.component';
 import { ElectionsComponent } from './Components/Client/elections/elections.component';
@@ -49,7 +49,7 @@ import { ScannerComponent } from './Components/Security/scanner/scanner.componen
     AppRoutingModule
   ],
   providers: [
-    //  AuthGuard,
+     AuthGuard,
     PrivateAccountService,
     ElectionsService,
     {

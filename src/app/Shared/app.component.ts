@@ -24,8 +24,8 @@ export class AppComponent {
    */
   // tslint:disable-next-line:variable-name
   constructor(private location: Location,
-    private _loadingBar: SlimLoadingBarService,
-     private _router: Router) {
+              private _loadingBar: SlimLoadingBarService,
+              private _router: Router) {
     this._router.events.subscribe((event: Event) => {
        this.navigationInterceptor(event);
     });
@@ -67,6 +67,7 @@ export class AppComponent {
       }
       this._loadingBar.start();
     }
+
     if (event instanceof NavigationEnd) {
       this.previousUrl = event.url;
       this._loadingBar.complete();

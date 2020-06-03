@@ -19,7 +19,7 @@ export class ElectionDetailComponent implements OnInit {
   routeValue: string;
 
   constructor(private location: Location, private fb: FormBuilder,
-    private route: ActivatedRoute, private router: Router, private electionsService: ElectionsService) {
+              private route: ActivatedRoute, private router: Router, private electionsService: ElectionsService) {
   }
   ngOnInit() {
 

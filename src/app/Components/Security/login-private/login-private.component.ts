@@ -22,15 +22,17 @@ declare var require: any;
 export class LoginPrivateComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
-                private route: ActivatedRoute,
-                private router: Router,
-                private accountService: PrivateAccountService) { }
+              private route: ActivatedRoute,
+              private router: Router,
+              private accountService: PrivateAccountService) { }
   angForm: any;
   message: string;
   qrcodestring: any;
   qrCodeReader: any;
   url: any;
   imgSrc: string;
+
+  deviceList: DeviceVM[];
 
   //  deviceList: string[];
 
@@ -108,8 +110,6 @@ export class LoginPrivateComponent implements OnInit {
         this.message = err.error.Message;
       });
   }
-
-  deviceList: DeviceVM[];
 
   Scan() {
     this.router.navigate(['/scanner']);

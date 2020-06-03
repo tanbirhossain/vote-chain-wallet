@@ -21,8 +21,8 @@ export class ScannerComponent implements OnInit {
   // loginPrivateComponent: LoginPrivateComponent;
   @ViewChild("LoginPrivateComponent") loginPrivateComponent: LoginPrivateComponent;
   constructor(private route: ActivatedRoute,
-    private router: Router,
-    private accountService: PrivateAccountService) { }
+              private router: Router,
+              private accountService: PrivateAccountService) { }
 
   ngOnInit(): void {
   }
