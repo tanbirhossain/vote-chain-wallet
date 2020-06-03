@@ -2,7 +2,7 @@ import { ScannerComponent } from './Components/Security/scanner/scanner.componen
 import { ElectionDetailComponent } from './Components/Client/election-detail/election-detail.component';
 import { CandidatesComponent } from './Components/Client/candidates/candidates.component';
 import { ElectionsComponent } from './Components/Client/elections/elections.component';
-import { AuthGuard } from './Auth/auth.guard';
+import { AuthGuard } from './auth/auth.guard';
 import { LoginComponent } from './Components/Security/login/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
