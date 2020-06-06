@@ -21,25 +21,6 @@ const routes: Routes = [
   { path: "candidates/:id", component: CandidatesComponent },
   { path: "", redirectTo: "elections", pathMatch: "full" },
   { path: "**", component: PageNotFoundComponent }
-  // ,
-  //   {
-  //     path: "employee/add",
-  //     component: EmployeeAddComponent, canActivate: [AuthGuard]
-  //   },
-  //   {
-  //     path: "employee/edit/:id",
-  //     component: EmployeeAddComponent, canActivate: [AuthGuard]
-  //   },
-  //   {
-  //     path: "employee/list",
-  //     component: EmployeeListComponent, canActivate: [AuthGuard]
-  //   },
-  //   {
-  //     path: "",
-  //     redirectTo: "employee/add", canActivate: [AuthGuard],
-  //     pathMatch: "full"
-  //   },
-
 ];
 
 @NgModule({

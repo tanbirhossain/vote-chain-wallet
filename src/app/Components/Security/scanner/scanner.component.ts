@@ -61,11 +61,11 @@ export class ScannerComponent implements OnInit {
 
 
 
-  clearMessage() {
-    setTimeout(() => {
-      this.guestExist = null;
-    }, 3000);
-  }
+  // clearMessage() {
+  //   setTimeout(() => {
+  //     this.guestExist = null;
+  //   }, 3000);
+  // }
 
 
 }

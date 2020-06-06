@@ -28,12 +28,12 @@ export class AuthInterceptor implements HttpInterceptor {
           err => {
             console.log("Auth-inter : ", err);
             if (err.status === 401) {
-              this.router.navigateByUrl('/login/private');
+              this.router.navigate(['/login/private']);
             }
           }
         );
     } else {
-      this.router.navigateByUrl('/login/private');
+      this.router.navigate(['/login/private']);
     }
   }
 }

@@ -41,11 +41,11 @@ import { ScannerComponent } from './Components/Security/scanner/scanner.componen
     ScannerComponent
   ],
   imports: [
-    ZXingScannerModule,
+    BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
+    ZXingScannerModule,
     // SlimLoadingBarModule,
-    BrowserModule,
     AppRoutingModule
   ],
   providers: [
@@ -67,7 +67,6 @@ import { ScannerComponent } from './Components/Security/scanner/scanner.componen
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
 
 
 // https://appdividend.com/2018/11/04/angular-7-crud-example-mean-stack-tutorial/
