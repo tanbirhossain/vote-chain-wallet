@@ -28,3 +28,15 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+// "name": "votechainxui",
+//   "version": "0.0.0",
+//   "scripts": {
+//     "ng": "ng",
+//     "start": "ng serve",
+//     "build": "ng build --prod",
+//     "test": "ng test",
+//     "lint": "ng lint",
+//     "e2e": "ng e2e",
+//     "lite-server": "lite-server"
+//   },
